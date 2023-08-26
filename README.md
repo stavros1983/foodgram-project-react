@@ -10,7 +10,7 @@ Python, Django, Django Rest Framework, Docker, Gunicorn, NGINX, PostgreSQL, Yand
 
 - Клонировать репозиторий:
 ```
-https://git@github.com:stavros1983/foodgram-project-react.git
+git clone git@github.com:stavros1983/foodgram-project-react.git
 ```
 
 - Установить на сервере Docker, Docker Compose:
@@ -97,7 +97,7 @@ sudo docker compose stop         # без удаления
 
 - Клонировать репозиторий:
 ```
-https://git@github.com:stavros1983/foodgram-project-react.git
+git clone git@github.com:stavros1983/foodgram-project-react.git
 ```
 
 - В корне проекта создать файл .env и заполнить своими данными по аналогии:
