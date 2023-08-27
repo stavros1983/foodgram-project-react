@@ -1,4 +1,5 @@
 from django.contrib import admin
+from django.conf import settings
 
 from .models import (FavoriteRecipe, Ingredient, Recipe, RecipeIngredient,
                      ShoppingCart, Subscribe, Tag)
@@ -84,7 +85,8 @@ class FavoriteRecipeAdmin(admin.ModelAdmin):
         description='Рецепты')
     def get_recipe(self, obj):
         return [
-            f'{item["name"]} ' for item in obj.recipe.values('name')[:5]]
+            f'{item["name"]} ' for item in obj.recipe.values
+            ('name')[:settings.QUANTITY]]
 
     @admin.display(
         description='В избранных')
@@ -101,7 +103,8 @@ class SoppingCartAdmin(admin.ModelAdmin):
     @admin.display(description='Рецепты')
     def get_recipe(self, obj):
         return [
-            f'{item["name"]} ' for item in obj.recipe.values('name')[:5]]
+            f'{item["name"]} ' for item in obj.recipe.values
+            ('name')[:settings.QUANTITY]]
 
     @admin.display(description='В избранных')
     def get_count(self, obj):

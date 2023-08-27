@@ -1,4 +1,4 @@
-from csv import reader
+import csv
 
 from django.core.management.base import BaseCommand
 
@@ -25,8 +25,7 @@ class Command(BaseCommand):
                 'recipes/data/ingredients.csv', 'r',
                 encoding='UTF-8'
         ) as ingredients:
-            for row in reader(ingredients):
-                if len(row) == 2:
-                    Ingredient.objects.get_or_create(
-                        name=row[0], measurement_unit=row[1],
-                    )
+            reader = csv.DictReader(ingredients)
+            Ingredient.objects.bulk_create(
+                Ingredient(**data) for data in reader
+            )

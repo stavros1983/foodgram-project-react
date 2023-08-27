@@ -160,3 +160,8 @@ REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'api.pagination.LimitPageNumberPagination',
     'PAGE_SIZE': 6,
 }
+
+
+QUANTITY = 5
+PAGE_SIZE = 6
+ERR_MSG = 'Не удается войти в систему с предоставленными учетными данными.'

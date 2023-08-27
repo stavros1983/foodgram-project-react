@@ -4,11 +4,11 @@ from django.contrib.auth.hashers import make_password
 from django.shortcuts import get_object_or_404
 from drf_base64.fields import Base64ImageField
 from rest_framework import serializers
+from django.conf import settings
 
 from recipes.models import Ingredient, Recipe, RecipeIngredient, Subscribe, Tag
 
 User = get_user_model()
-ERR_MSG = 'Не удается войти в систему с предоставленными учетными данными.'
 
 
 class TokenSerializer(serializers.Serializer):
@@ -34,7 +34,7 @@ class TokenSerializer(serializers.Serializer):
                 password=password)
             if not user:
                 raise serializers.ValidationError(
-                    ERR_MSG,
+                    settings.ERR_MSG,
                     code='authorization')
         else:
             msg = 'Необходимо указать "адрес электронной почты" и "пароль".'
@@ -93,7 +93,7 @@ class UserPasswordSerializer(serializers.Serializer):
                 username=user.email,
                 password=current_password):
             raise serializers.ValidationError(
-                ERR_MSG, code='authorization')
+                settings.ERR_MSG, code='authorization')
         return current_password
 
     def validate_new_password(self, new_password):

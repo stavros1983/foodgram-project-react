@@ -9,7 +9,7 @@ services:
     env_file: ../.env
 
   backend:
-    image: stavros1983/foodgram_backend_3
+    image: stavros1983/foodgram_backend
     restart: always
     volumes:
       - static:/app/static/
