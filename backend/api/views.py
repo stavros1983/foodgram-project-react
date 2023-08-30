@@ -23,7 +23,6 @@ from .serializers import (IngredientSerializer, RecipeReadSerializer,
                           UserCreateSerializer, UserListSerializer,
                           UserPasswordSerializer)
 
-
 User = get_user_model()
 
 
