@@ -2,6 +2,9 @@
 
 Foodgram - продуктовый помощник с базой кулинарных рецептов. Позволяет публиковать рецепты, сохранять избранные, а также формировать список покупок для выбранных рецептов. Можно подписываться на любимых авторов.
 
+Проект доступен по адресу https://foodgram1983.ddns.net/
+Email(логин) superuser'a: stavros1983@yandex.ru, пароль: stavros 
+
 ### Технологии:
 
 Python, Django, Django Rest Framework, Docker, Gunicorn, NGINX, PostgreSQL, Yandex Cloud, Continuous Integration, Continuous Deployment
