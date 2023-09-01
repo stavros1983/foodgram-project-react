@@ -10,7 +10,7 @@ class TagsMultipleChoiceField(
     def validate(self, value):
         if self.required and not value:
             raise ValidationError(
-                self.error_messages['required'],
+                self.error_messages['необходимо'],
                 code='required')
         for val in value:
             if val in self.choices and not self.valid_value(val):
