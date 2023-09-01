@@ -15,7 +15,7 @@ class TagsMultipleChoiceField(
         for val in value:
             if val in self.choices and not self.valid_value(val):
                 raise ValidationError(
-                    self.error_messages['invalid_choice'],
+                    self.error_messages['неверный выбор'],
                     code='invalid_choice',
                     params={'value': val},)
 
