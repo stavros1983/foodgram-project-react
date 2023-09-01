@@ -211,6 +211,9 @@ class RecipeWriteSerializer(serializers.ModelSerializer):
             if int(ingredient.get('amount')) < 1:
                 raise serializers.ValidationError(
                     'Количество ингредиента >= 1!')
+            if int(ingredient.get('amount')) > 32000:
+                raise serializers.ValidationError(
+                    'Количество ингредиента превышено')
         return ingredients
 
     def create_ingredients(self, ingredients, recipe):
