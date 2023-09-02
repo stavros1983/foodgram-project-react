@@ -34,6 +34,8 @@ ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "localhost").split()
 
 AUTH_USER_MODEL = 'users.User'
 
+CSRF_TRUSTED_ORIGINS = ['https://foodgram1983.ddns.net']
+
 
 # Application definition
 
